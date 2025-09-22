@@ -1,0 +1,17 @@
+/apps/base_dir
+
+# python generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# venv
+.venv
+i
+ESN/data/optimization/esn_live1/latestESN/data/optimization/esn_opt_run/latest
+ESN/data/optimization/esn_opt_run/latest
+ESN/data/optimization/esn_live1/latest
+ESN/data/optimization/**/latest

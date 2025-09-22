@@ -1,0 +1,14 @@
+2025-09-02 18:28:01,569 (event_logging:164) [DEBUG]: Start event logging
+2025-09-02 18:28:01,569 (event_logging:165) [DEBUG]: Logger name: __main__
+2025-09-02 18:28:01,569 (event_logging:166) [DEBUG]: Log filename: data/optimization/esn_uv_run/optimize_esn_model.log
+2025-09-02 18:28:01,570 (event_logging:168) [DEBUG]: Command: python apps/optimize_esn_model.py tests/data -n 5 -m apps/config/model.toml -a preview-ref -s none --opt-seed 42 --seed 42 --label esn_uv_run --output data/optimization/esn_uv_run --no-split-by-date --no-make-latest-symlink --overwrite -vv --train-size 1 --test-size 1 -j 0
+2025-09-02 18:28:01,571 (optimize_esn_model:527) [INFO]: Output directory: data/optimization/esn_uv_run
+2025-09-02 18:28:01,571 (data_handling:162) [DEBUG]: Directory created: data/optimization/esn_uv_run
+2025-09-02 18:28:01,572 (data_handling:162) [DEBUG]: Directory created: data/optimization/esn_uv_run/config
+2025-09-02 18:28:01,580 (data_handling:180) [DEBUG]: Model config copied: None -> data/optimization/esn_uv_run/config
+2025-09-02 18:28:01,581 (optimize_esn_model:530) [DEBUG]: Parsed arguments: Namespace(base_dir='/mnt/c/Users/HosodaLab2/University/Reserch/reservoir/myrobot/ESN/data', joints=['0'], datasets=['tests/data'], trials=5, glob_pattern='**/*.csv', train_size=1.0, test_size=1.0, seed=42, opt_seed=42, shuffle=True, split_in_each_directory=False, model_config='apps/config/model.toml', adapter='preview-ref', scaler=['none'], output='data/optimization/esn_uv_run', output_prefix='optimization', overwrite=True, label='esn_uv_run', sublabel=None, split_by_date=False, specify_date=None, make_latest_symlink=False, verbose=2)
+2025-09-02 18:28:01,581 (optimize_esn_model:275) [DEBUG]: Resolved active joints: [0]
+2025-09-02 18:28:01,584 (optimize_esn_model:279) [DEBUG]: Model config file loaded: apps/config/model.toml
+2025-09-02 18:28:01,584 (optimize_esn_model:282) [DEBUG]: Loading datasets with following condition:
+2025-09-02 18:28:01,585 (optimize_esn_model:283) [DEBUG]:      Path list: ['tests/data']
+2025-09-02 18:28:01,585 (optimize_esn_model:284) [DEBUG]:   glob pattern: **/*.csv

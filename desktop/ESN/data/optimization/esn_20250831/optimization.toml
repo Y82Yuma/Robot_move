@@ -1,0 +1,37 @@
+[optimization]
+best_scaler = "std"
+best_value = 514352349.0083454
+trials = 1
+seed = 42
+
+[model]
+[model.adapter]
+name = "preview-ref"
+params = "default"
+active_joints = [0]
+dt = 0.03333333333
+include_dqdes = false
+ctrl_step = 1
+
+[model.adapter.preview-ref.step05]
+preview_step = 5
+[model.adapter.preview-ref.default]
+preview_step = 5
+
+[model.scaler]
+name = "std"
+params = "default"
+
+[model.scaler.std.default]
+
+[model.regressor]
+name = "esn"
+params = "best"
+
+[model.regressor.esn.best]
+N_x = 2300
+density = 0.30334265725654797
+rho = 0.39643541684062933
+leaking_rate = 0.16443457513284063
+input_scale = 0.06750277604651747
+

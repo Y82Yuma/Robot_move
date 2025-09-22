@@ -1,0 +1,19 @@
+2025-09-02 19:10:26,735 (event_logging:164) [DEBUG]: Start event logging
+2025-09-02 19:10:26,735 (event_logging:165) [DEBUG]: Logger name: __main__
+2025-09-02 19:10:26,735 (event_logging:166) [DEBUG]: Log filename: data/optimization/esn_quick6/optimize_esn_model.log
+2025-09-02 19:10:26,736 (event_logging:168) [DEBUG]: Command: python apps/optimize_esn_model.py tests/data/simple_linear.csv tests/data/simple_mlp_max_iter-200.csv -n 1 -m apps/config/model.toml -a preview-ref -s none --opt-seed 42 --seed 42 --train-size 0.5 --test-size 0.5 -j 0 --label esn_quick6 --output data/optimization/esn_quick6 --no-split-by-date --no-make-latest-symlink --overwrite -vv
+2025-09-02 19:10:26,737 (optimize_esn_model:553) [INFO]: Output directory: data/optimization/esn_quick6
+2025-09-02 19:10:26,737 (data_handling:162) [DEBUG]: Directory created: data/optimization/esn_quick6
+2025-09-02 19:10:26,738 (data_handling:162) [DEBUG]: Directory created: data/optimization/esn_quick6/config
+2025-09-02 19:10:26,746 (data_handling:180) [DEBUG]: Model config copied: None -> data/optimization/esn_quick6/config
+2025-09-02 19:10:26,746 (optimize_esn_model:556) [DEBUG]: Parsed arguments: Namespace(base_dir='/mnt/c/Users/HosodaLab2/University/Reserch/reservoir/myrobot/ESN/data', joints=['0'], datasets=['tests/data/simple_linear.csv', 'tests/data/simple_mlp_max_iter-200.csv'], trials=1, glob_pattern='**/*.csv', train_size=0.5, test_size=0.5, seed=42, opt_seed=42, shuffle=True, split_in_each_directory=False, model_config='apps/config/model.toml', adapter='preview-ref', scaler=['none'], output='data/optimization/esn_quick6', output_prefix='optimization', overwrite=True, label='esn_quick6', sublabel=None, split_by_date=False, specify_date=None, make_latest_symlink=False, verbose=2)
+2025-09-02 19:10:26,747 (optimize_esn_model:292) [DEBUG]: Resolved active joints: [0]
+2025-09-02 19:10:26,750 (optimize_esn_model:296) [DEBUG]: Model config file loaded: apps/config/model.toml
+2025-09-02 19:10:26,750 (optimize_esn_model:299) [DEBUG]: Loading datasets with following condition:
+2025-09-02 19:10:26,750 (optimize_esn_model:300) [DEBUG]:      Path list: ['tests/data/simple_linear.csv', 'tests/data/simple_mlp_max_iter-200.csv']
+2025-09-02 19:10:26,750 (optimize_esn_model:301) [DEBUG]:   glob pattern: **/*.csv
+2025-09-02 19:10:26,755 (optimize_esn_model:320) [INFO]: Dataset files: train=1, test=1
+2025-09-02 19:10:26,755 (model_utility:527) [DEBUG]: Loaded data adapter: PreviewRef(PreviewRefParams(active_joints=[0], dt=0.03333333333, ctrl_step=1, preview_step=5, include_dqdes=False))
+2025-09-02 19:10:26,755 (optimize_esn_model:324) [INFO]: Optimizing parameters...
+2025-09-02 19:10:26,755 (model_utility:713) [DEBUG]: Loading datasets from ['tests/data/simple_linear.csv']
+2025-09-02 19:10:26,764 (model_utility:717) [INFO]: 1 datasets loaded in total

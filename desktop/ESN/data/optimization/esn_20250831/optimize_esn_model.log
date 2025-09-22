@@ -1,0 +1,236 @@
+2025-09-02 19:40:11,253 (event_logging:164) [DEBUG]: Start event logging
+2025-09-02 19:40:11,253 (event_logging:165) [DEBUG]: Logger name: __main__
+2025-09-02 19:40:11,254 (event_logging:166) [DEBUG]: Log filename: data/optimization/esn_20250831/optimize_esn_model.log
+2025-09-02 19:40:11,254 (event_logging:168) [DEBUG]: Command: python apps/optimize_esn_model.py hirai/data/myrobot/hirai/csv/20250831 -n 1 -m apps/config/model.toml -a preview-ref -s none std --opt-seed 42 --seed 42 --train-size 0.8 --test-size 0.2 -j 0 --label esn_20250831 --output data/optimization/esn_20250831 --glob-pattern step/fast/motion_data_*.csv --no-split-by-date --no-make-latest-symlink --overwrite -vv
+2025-09-02 19:40:11,255 (optimize_esn_model:553) [INFO]: Output directory: data/optimization/esn_20250831
+2025-09-02 19:40:11,255 (data_handling:162) [DEBUG]: Directory created: data/optimization/esn_20250831
+2025-09-02 19:40:11,256 (data_handling:162) [DEBUG]: Directory created: data/optimization/esn_20250831/config
+2025-09-02 19:40:11,265 (data_handling:180) [DEBUG]: Model config copied: None -> data/optimization/esn_20250831/config
+2025-09-02 19:40:11,265 (optimize_esn_model:556) [DEBUG]: Parsed arguments: Namespace(base_dir='/mnt/c/Users/HosodaLab2/University/Reserch/reservoir/myrobot/ESN/data', joints=['0'], datasets=['hirai/data/myrobot/hirai/csv/20250831'], trials=1, glob_pattern='step/fast/motion_data_*.csv', train_size=0.8, test_size=0.2, seed=42, opt_seed=42, shuffle=True, split_in_each_directory=False, model_config='apps/config/model.toml', adapter='preview-ref', scaler=['none', 'std'], output='data/optimization/esn_20250831', output_prefix='optimization', overwrite=True, label='esn_20250831', sublabel=None, split_by_date=False, specify_date=None, make_latest_symlink=False, verbose=2)
+2025-09-02 19:40:11,265 (optimize_esn_model:292) [DEBUG]: Resolved active joints: [0]
+2025-09-02 19:40:11,268 (optimize_esn_model:296) [DEBUG]: Model config file loaded: apps/config/model.toml
+2025-09-02 19:40:11,268 (optimize_esn_model:299) [DEBUG]: Loading datasets with following condition:
+2025-09-02 19:40:11,268 (optimize_esn_model:300) [DEBUG]:      Path list: ['hirai/data/myrobot/hirai/csv/20250831']
+2025-09-02 19:40:11,269 (optimize_esn_model:301) [DEBUG]:   glob pattern: step/fast/motion_data_*.csv
+2025-09-02 19:41:18,393 (event_logging:164) [DEBUG]: Start event logging
+2025-09-02 19:41:18,393 (event_logging:165) [DEBUG]: Logger name: __main__
+2025-09-02 19:41:18,393 (event_logging:166) [DEBUG]: Log filename: data/optimization/esn_20250831/optimize_esn_model.log
+2025-09-02 19:41:18,394 (event_logging:168) [DEBUG]: Command: python apps/optimize_esn_model.py ../hirai/data/myrobot/hirai/csv/20250831 -n 1 -m apps/config/model.toml -a preview-ref -s none std --opt-seed 42 --seed 42 --train-size 0.8 --test-size 0.2 -j 0 --label esn_20250831 --output data/optimization/esn_20250831 --glob-pattern step/fast/motion_data_*.csv --no-split-by-date --no-make-latest-symlink --overwrite -vv
+2025-09-02 19:41:18,394 (optimize_esn_model:553) [INFO]: Output directory: data/optimization/esn_20250831
+2025-09-02 19:41:18,394 (data_handling:162) [DEBUG]: Directory created: data/optimization/esn_20250831
+2025-09-02 19:41:18,395 (data_handling:162) [DEBUG]: Directory created: data/optimization/esn_20250831/config
+2025-09-02 19:41:18,405 (data_handling:180) [DEBUG]: Model config copied: None -> data/optimization/esn_20250831/config
+2025-09-02 19:41:18,405 (optimize_esn_model:556) [DEBUG]: Parsed arguments: Namespace(base_dir='/mnt/c/Users/HosodaLab2/University/Reserch/reservoir/myrobot/ESN/data', joints=['0'], datasets=['../hirai/data/myrobot/hirai/csv/20250831'], trials=1, glob_pattern='step/fast/motion_data_*.csv', train_size=0.8, test_size=0.2, seed=42, opt_seed=42, shuffle=True, split_in_each_directory=False, model_config='apps/config/model.toml', adapter='preview-ref', scaler=['none', 'std'], output='data/optimization/esn_20250831', output_prefix='optimization', overwrite=True, label='esn_20250831', sublabel=None, split_by_date=False, specify_date=None, make_latest_symlink=False, verbose=2)
+2025-09-02 19:41:18,405 (optimize_esn_model:292) [DEBUG]: Resolved active joints: [0]
+2025-09-02 19:41:18,408 (optimize_esn_model:296) [DEBUG]: Model config file loaded: apps/config/model.toml
+2025-09-02 19:41:18,408 (optimize_esn_model:299) [DEBUG]: Loading datasets with following condition:
+2025-09-02 19:41:18,408 (optimize_esn_model:300) [DEBUG]:      Path list: ['../hirai/data/myrobot/hirai/csv/20250831']
+2025-09-02 19:41:18,408 (optimize_esn_model:301) [DEBUG]:   glob pattern: step/fast/motion_data_*.csv
+2025-09-02 19:41:18,423 (optimize_esn_model:320) [INFO]: Dataset files: train=80, test=20
+2025-09-02 19:41:18,424 (model_utility:527) [DEBUG]: Loaded data adapter: PreviewRef(PreviewRefParams(active_joints=[0], dt=0.03333333333, ctrl_step=1, preview_step=5, include_dqdes=False))
+2025-09-02 19:41:18,424 (optimize_esn_model:324) [INFO]: Optimizing parameters...
+2025-09-02 19:41:18,424 (model_utility:713) [DEBUG]: Loading datasets from ['../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_094.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_037.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_028.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_080.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_007.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_057.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_079.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_026.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_076.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_078.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_038.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_000.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_086.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_046.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_010.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_029.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_070.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_045.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_017.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_039.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_091.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_040.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_089.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_005.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_068.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_001.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_095.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_084.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_063.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_003.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_083.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_093.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_020.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_087.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_043.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_073.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_032.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_075.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_023.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_096.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_069.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_015.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_048.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_055.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_060.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_009.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_062.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_031.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_072.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_016.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_044.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_082.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_067.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_034.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_030.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_058.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_074.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_088.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_098.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_054.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_049.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_006.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_090.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_011.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_085.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_041.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_022.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_019.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_035.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_064.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_047.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_012.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_053.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_014.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_013.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_066.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_036.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_065.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_077.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_008.csv']
+2025-09-02 19:41:19,760 (model_utility:717) [INFO]: 80 datasets loaded in total
+2025-09-02 19:41:19,768 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_094.csv
+2025-09-02 19:41:19,771 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_037.csv
+2025-09-02 19:41:19,774 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_028.csv
+2025-09-02 19:41:19,777 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_080.csv
+2025-09-02 19:41:19,779 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_007.csv
+2025-09-02 19:41:19,782 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_057.csv
+2025-09-02 19:41:19,786 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_079.csv
+2025-09-02 19:41:19,788 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_026.csv
+2025-09-02 19:41:19,791 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_076.csv
+2025-09-02 19:41:19,795 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_078.csv
+2025-09-02 19:41:19,799 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_038.csv
+2025-09-02 19:41:19,803 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_000.csv
+2025-09-02 19:41:19,807 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_086.csv
+2025-09-02 19:41:19,811 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_046.csv
+2025-09-02 19:41:19,815 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_010.csv
+2025-09-02 19:41:19,819 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_029.csv
+2025-09-02 19:41:19,823 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_070.csv
+2025-09-02 19:41:19,829 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_045.csv
+2025-09-02 19:41:19,834 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_017.csv
+2025-09-02 19:41:19,838 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_039.csv
+2025-09-02 19:41:19,843 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_091.csv
+2025-09-02 19:41:19,848 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_040.csv
+2025-09-02 19:41:19,852 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_089.csv
+2025-09-02 19:41:19,858 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_005.csv
+2025-09-02 19:41:19,864 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_068.csv
+2025-09-02 19:41:19,870 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_001.csv
+2025-09-02 19:41:19,875 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_095.csv
+2025-09-02 19:41:19,881 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_084.csv
+2025-09-02 19:41:19,886 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_063.csv
+2025-09-02 19:41:19,893 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_003.csv
+2025-09-02 19:41:19,899 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_083.csv
+2025-09-02 19:41:19,905 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_093.csv
+2025-09-02 19:41:19,912 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_020.csv
+2025-09-02 19:41:19,918 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_087.csv
+2025-09-02 19:41:19,925 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_043.csv
+2025-09-02 19:41:19,931 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_073.csv
+2025-09-02 19:41:19,936 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_032.csv
+2025-09-02 19:41:19,940 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_075.csv
+2025-09-02 19:41:19,946 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_023.csv
+2025-09-02 19:41:19,951 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_096.csv
+2025-09-02 19:41:19,956 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_069.csv
+2025-09-02 19:41:19,962 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_015.csv
+2025-09-02 19:41:19,966 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_048.csv
+2025-09-02 19:41:19,971 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_055.csv
+2025-09-02 19:41:19,976 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_060.csv
+2025-09-02 19:41:19,981 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_009.csv
+2025-09-02 19:41:19,988 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_062.csv
+2025-09-02 19:41:19,993 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_031.csv
+2025-09-02 19:41:19,998 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_072.csv
+2025-09-02 19:41:20,003 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_016.csv
+2025-09-02 19:41:20,011 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_044.csv
+2025-09-02 19:41:20,017 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_082.csv
+2025-09-02 19:41:20,025 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_067.csv
+2025-09-02 19:41:20,030 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_034.csv
+2025-09-02 19:41:20,038 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_030.csv
+2025-09-02 19:41:20,043 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_058.csv
+2025-09-02 19:41:20,051 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_074.csv
+2025-09-02 19:41:20,058 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_088.csv
+2025-09-02 19:41:20,063 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_098.csv
+2025-09-02 19:41:20,069 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_054.csv
+2025-09-02 19:41:20,077 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_049.csv
+2025-09-02 19:41:20,086 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_006.csv
+2025-09-02 19:41:20,091 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_090.csv
+2025-09-02 19:41:20,097 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_011.csv
+2025-09-02 19:41:20,102 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_085.csv
+2025-09-02 19:41:20,108 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_041.csv
+2025-09-02 19:41:20,114 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_022.csv
+2025-09-02 19:41:20,120 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_019.csv
+2025-09-02 19:41:20,125 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_035.csv
+2025-09-02 19:41:20,130 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_064.csv
+2025-09-02 19:41:20,136 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_047.csv
+2025-09-02 19:41:20,143 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_012.csv
+2025-09-02 19:41:20,149 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_053.csv
+2025-09-02 19:41:20,153 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_014.csv
+2025-09-02 19:41:20,159 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_013.csv
+2025-09-02 19:41:20,166 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_066.csv
+2025-09-02 19:41:20,172 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_036.csv
+2025-09-02 19:41:20,178 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_065.csv
+2025-09-02 19:41:20,183 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_077.csv
+2025-09-02 19:41:20,189 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_008.csv
+2025-09-02 19:41:20,189 (optimize_esn_model:71) [INFO]: Train data prepared: x_train=(239520, 5), y_train=(239520, 2)
+2025-09-02 19:41:20,190 (model_utility:713) [DEBUG]: Loading datasets from ['../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_059.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_021.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_056.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_018.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_033.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_042.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_050.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_027.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_092.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_071.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_002.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_025.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_024.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_052.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_081.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_099.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_051.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_061.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_004.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_097.csv']
+2025-09-02 19:41:20,453 (model_utility:717) [INFO]: 20 datasets loaded in total
+2025-09-02 19:41:20,456 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_059.csv
+2025-09-02 19:41:20,460 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_021.csv
+2025-09-02 19:41:20,462 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_056.csv
+2025-09-02 19:41:20,465 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_018.csv
+2025-09-02 19:41:20,467 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_033.csv
+2025-09-02 19:41:20,469 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_042.csv
+2025-09-02 19:41:20,472 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_050.csv
+2025-09-02 19:41:20,474 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_027.csv
+2025-09-02 19:41:20,476 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_092.csv
+2025-09-02 19:41:20,478 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_071.csv
+2025-09-02 19:41:20,481 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_002.csv
+2025-09-02 19:41:20,483 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_025.csv
+2025-09-02 19:41:20,486 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_024.csv
+2025-09-02 19:41:20,488 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_052.csv
+2025-09-02 19:41:20,490 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_081.csv
+2025-09-02 19:41:20,493 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_099.csv
+2025-09-02 19:41:20,496 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_051.csv
+2025-09-02 19:41:20,498 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_061.csv
+2025-09-02 19:41:20,500 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_004.csv
+2025-09-02 19:41:20,502 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_097.csv
+2025-09-02 19:41:20,503 (optimize_esn_model:77) [INFO]: Prepared 20 test dataset(s) for evaluation
+2025-09-02 19:41:20,505 (optimize_esn_model:92) [INFO]: [Trial 0] start: scaler=std, N_x=2300, density=0.303, rho=0.396, leaking=0.164, input_scale=0.068
+2025-09-02 19:41:20,505 (model_utility:537) [DEBUG]: Loaded scaler: StandardScaler()
+2025-09-02 19:41:22,817 (optimize_esn_model:125) [INFO]: [Trial 0] fitting ESN...
+2025-09-02 21:05:43,061 (optimize_esn_model:127) [INFO]: [Trial 0] fitting done
+2025-09-02 21:06:55,030 (optimize_esn_model:134) [INFO]: [Trial 0] done: value=514352349.008345
+2025-09-02 21:06:55,062 (optimize_esn_model:145) [INFO]: [Trial 0] finished: value=514352349.008345, best=514352349.008345
+2025-09-02 21:06:55,095 (optimize_esn_model:335) [DEBUG]: Optimization has done
+2025-09-02 21:06:55,101 (optimize_esn_model:347) [INFO]: Optimization result saved: data/optimization/esn_20250831/optimization.toml
+2025-09-02 21:06:55,118 (optimize_esn_model:351) [DEBUG]: Best model config file loaded: data/optimization/esn_20250831/optimization.toml
+2025-09-02 21:06:55,118 (model_utility:527) [DEBUG]: Loaded data adapter: PreviewRef(PreviewRefParams(active_joints=[0], dt=0.03333333333, ctrl_step=1, preview_step=5, include_dqdes=False))
+2025-09-02 21:06:55,119 (model_utility:537) [DEBUG]: Loaded scaler: StandardScaler()
+2025-09-02 21:06:58,329 (model_utility:601) [DEBUG]: Loaded ESN: <affetto_nn_ctrl.esn.ESN object at 0x788aac4c90a0>
+2025-09-02 21:06:58,331 (optimize_esn_model:357) [INFO]: Training best model...
+2025-09-02 21:06:58,331 (model_utility:713) [DEBUG]: Loading datasets from ['../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_094.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_037.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_028.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_080.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_007.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_057.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_079.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_026.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_076.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_078.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_038.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_000.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_086.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_046.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_010.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_029.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_070.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_045.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_017.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_039.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_091.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_040.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_089.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_005.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_068.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_001.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_095.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_084.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_063.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_003.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_083.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_093.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_020.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_087.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_043.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_073.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_032.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_075.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_023.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_096.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_069.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_015.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_048.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_055.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_060.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_009.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_062.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_031.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_072.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_016.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_044.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_082.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_067.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_034.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_030.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_058.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_074.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_088.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_098.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_054.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_049.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_006.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_090.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_011.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_085.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_041.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_022.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_019.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_035.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_064.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_047.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_012.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_053.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_014.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_013.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_066.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_036.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_065.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_077.csv', '../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_008.csv']
+2025-09-02 21:06:59,402 (model_utility:717) [INFO]: 80 datasets loaded in total
+2025-09-02 21:06:59,412 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_094.csv
+2025-09-02 21:06:59,415 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_037.csv
+2025-09-02 21:06:59,418 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_028.csv
+2025-09-02 21:06:59,421 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_080.csv
+2025-09-02 21:06:59,423 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_007.csv
+2025-09-02 21:06:59,426 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_057.csv
+2025-09-02 21:06:59,429 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_079.csv
+2025-09-02 21:06:59,431 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_026.csv
+2025-09-02 21:06:59,434 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_076.csv
+2025-09-02 21:06:59,436 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_078.csv
+2025-09-02 21:06:59,439 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_038.csv
+2025-09-02 21:06:59,441 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_000.csv
+2025-09-02 21:06:59,444 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_086.csv
+2025-09-02 21:06:59,446 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_046.csv
+2025-09-02 21:06:59,449 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_010.csv
+2025-09-02 21:06:59,452 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_029.csv
+2025-09-02 21:06:59,454 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_070.csv
+2025-09-02 21:06:59,457 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_045.csv
+2025-09-02 21:06:59,460 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_017.csv
+2025-09-02 21:06:59,462 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_039.csv
+2025-09-02 21:06:59,465 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_091.csv
+2025-09-02 21:06:59,468 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_040.csv
+2025-09-02 21:06:59,470 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_089.csv
+2025-09-02 21:06:59,473 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_005.csv
+2025-09-02 21:06:59,476 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_068.csv
+2025-09-02 21:06:59,480 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_001.csv
+2025-09-02 21:06:59,483 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_095.csv
+2025-09-02 21:06:59,486 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_084.csv
+2025-09-02 21:06:59,489 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_063.csv
+2025-09-02 21:06:59,491 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_003.csv
+2025-09-02 21:06:59,494 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_083.csv
+2025-09-02 21:06:59,497 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_093.csv
+2025-09-02 21:06:59,501 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_020.csv
+2025-09-02 21:06:59,503 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_087.csv
+2025-09-02 21:06:59,506 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_043.csv
+2025-09-02 21:06:59,510 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_073.csv
+2025-09-02 21:06:59,513 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_032.csv
+2025-09-02 21:06:59,516 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_075.csv
+2025-09-02 21:06:59,519 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_023.csv
+2025-09-02 21:06:59,522 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_096.csv
+2025-09-02 21:06:59,525 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_069.csv
+2025-09-02 21:06:59,528 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_015.csv
+2025-09-02 21:06:59,531 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_048.csv
+2025-09-02 21:06:59,534 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_055.csv
+2025-09-02 21:06:59,536 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_060.csv
+2025-09-02 21:06:59,540 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_009.csv
+2025-09-02 21:06:59,543 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_062.csv
+2025-09-02 21:06:59,546 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_031.csv
+2025-09-02 21:06:59,550 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_072.csv
+2025-09-02 21:06:59,553 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_016.csv
+2025-09-02 21:06:59,556 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_044.csv
+2025-09-02 21:06:59,559 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_082.csv
+2025-09-02 21:06:59,562 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_067.csv
+2025-09-02 21:06:59,565 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_034.csv
+2025-09-02 21:06:59,568 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_030.csv
+2025-09-02 21:06:59,573 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_058.csv
+2025-09-02 21:06:59,577 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_074.csv
+2025-09-02 21:06:59,582 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_088.csv
+2025-09-02 21:06:59,585 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_098.csv
+2025-09-02 21:06:59,590 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_054.csv
+2025-09-02 21:06:59,593 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_049.csv
+2025-09-02 21:06:59,597 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_006.csv
+2025-09-02 21:06:59,615 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_090.csv
+2025-09-02 21:06:59,620 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_011.csv
+2025-09-02 21:06:59,623 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_085.csv
+2025-09-02 21:06:59,628 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_041.csv
+2025-09-02 21:06:59,634 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_022.csv
+2025-09-02 21:06:59,639 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_019.csv
+2025-09-02 21:06:59,643 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_035.csv
+2025-09-02 21:06:59,647 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_064.csv
+2025-09-02 21:06:59,651 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_047.csv
+2025-09-02 21:06:59,655 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_012.csv
+2025-09-02 21:06:59,659 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_053.csv
+2025-09-02 21:06:59,664 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_014.csv
+2025-09-02 21:06:59,669 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_013.csv
+2025-09-02 21:06:59,674 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_066.csv
+2025-09-02 21:06:59,679 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_036.csv
+2025-09-02 21:06:59,683 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_065.csv
+2025-09-02 21:06:59,687 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_077.csv
+2025-09-02 21:06:59,691 (model_utility:739) [DEBUG]: Loaded dataset: ../hirai/data/myrobot/hirai/csv/20250831/step/fast/motion_data_008.csv
+2025-09-02 21:06:59,707 (model_utility:816) [DEBUG]: x_train.shape = (239520, 5)
+2025-09-02 21:06:59,708 (model_utility:817) [DEBUG]: y_train.shape = (239520, 2)
+2025-09-02 22:30:21,453 (optimize_esn_model:360) [DEBUG]: Training has done
+2025-09-02 22:30:21,755 (optimize_esn_model:376) [INFO]: Trained best model saved: data/optimization/esn_20250831/trained_model.joblib

@@ -1,0 +1,120 @@
+2025-09-02 19:16:21,272 (event_logging:164) [DEBUG]: Start event logging
+2025-09-02 19:16:21,272 (event_logging:165) [DEBUG]: Logger name: __main__
+2025-09-02 19:16:21,273 (event_logging:166) [DEBUG]: Log filename: data/optimization/esn_quick_motion/optimize_esn_model.log
+2025-09-02 19:16:21,273 (event_logging:168) [DEBUG]: Command: python apps/optimize_esn_model.py tests/data -n 1 -m apps/config/model.toml -a preview-ref -s none std --opt-seed 42 --seed 42 --train-size 0.8 --test-size 0.2 -j 0 --label esn_quick_motion --output data/optimization/esn_quick_motion --glob-pattern motion_data_*.csv --no-split-by-date --no-make-latest-symlink --overwrite -vv
+2025-09-02 19:16:21,274 (optimize_esn_model:553) [INFO]: Output directory: data/optimization/esn_quick_motion
+2025-09-02 19:16:21,274 (data_handling:162) [DEBUG]: Directory created: data/optimization/esn_quick_motion
+2025-09-02 19:16:21,275 (data_handling:162) [DEBUG]: Directory created: data/optimization/esn_quick_motion/config
+2025-09-02 19:16:21,283 (data_handling:180) [DEBUG]: Model config copied: None -> data/optimization/esn_quick_motion/config
+2025-09-02 19:16:21,284 (optimize_esn_model:556) [DEBUG]: Parsed arguments: Namespace(base_dir='/mnt/c/Users/HosodaLab2/University/Reserch/reservoir/myrobot/ESN/data', joints=['0'], datasets=['tests/data'], trials=1, glob_pattern='motion_data_*.csv', train_size=0.8, test_size=0.2, seed=42, opt_seed=42, shuffle=True, split_in_each_directory=False, model_config='apps/config/model.toml', adapter='preview-ref', scaler=['none', 'std'], output='data/optimization/esn_quick_motion', output_prefix='optimization', overwrite=True, label='esn_quick_motion', sublabel=None, split_by_date=False, specify_date=None, make_latest_symlink=False, verbose=2)
+2025-09-02 19:16:21,284 (optimize_esn_model:292) [DEBUG]: Resolved active joints: [0]
+2025-09-02 19:16:21,287 (optimize_esn_model:296) [DEBUG]: Model config file loaded: apps/config/model.toml
+2025-09-02 19:16:21,287 (optimize_esn_model:299) [DEBUG]: Loading datasets with following condition:
+2025-09-02 19:16:21,287 (optimize_esn_model:300) [DEBUG]:      Path list: ['tests/data']
+2025-09-02 19:16:21,287 (optimize_esn_model:301) [DEBUG]:   glob pattern: motion_data_*.csv
+2025-09-02 19:16:21,291 (optimize_esn_model:320) [INFO]: Dataset files: train=8, test=2
+2025-09-02 19:16:21,292 (model_utility:527) [DEBUG]: Loaded data adapter: PreviewRef(PreviewRefParams(active_joints=[0], dt=0.03333333333, ctrl_step=1, preview_step=5, include_dqdes=False))
+2025-09-02 19:16:21,292 (optimize_esn_model:324) [INFO]: Optimizing parameters...
+2025-09-02 19:16:21,292 (model_utility:713) [DEBUG]: Loading datasets from ['tests/data/motion_data_000.csv', 'tests/data/motion_data_010.csv', 'tests/data/motion_data_003.csv', 'tests/data/motion_data_005.csv', 'tests/data/motion_data_002.csv', 'tests/data/motion_data_004.csv', 'tests/data/motion_data_009.csv', 'tests/data/motion_data_001.csv']
+2025-09-02 19:16:21,405 (model_utility:717) [INFO]: 8 datasets loaded in total
+2025-09-02 19:16:21,411 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_000.csv
+2025-09-02 19:16:21,413 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_010.csv
+2025-09-02 19:16:21,414 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_003.csv
+2025-09-02 19:16:21,416 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_005.csv
+2025-09-02 19:16:21,417 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_002.csv
+2025-09-02 19:16:21,419 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_004.csv
+2025-09-02 19:16:21,420 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_009.csv
+2025-09-02 19:16:21,422 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_001.csv
+2025-09-02 19:16:21,422 (optimize_esn_model:71) [INFO]: Train data prepared: x_train=(2360, 5), y_train=(2360, 2)
+2025-09-02 19:16:21,422 (model_utility:713) [DEBUG]: Loading datasets from ['tests/data/motion_data_006.csv', 'tests/data/motion_data_007.csv']
+2025-09-02 19:16:21,450 (model_utility:717) [INFO]: 2 datasets loaded in total
+2025-09-02 19:16:21,452 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_006.csv
+2025-09-02 19:16:21,453 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_007.csv
+2025-09-02 19:16:21,454 (optimize_esn_model:77) [INFO]: Prepared 2 test dataset(s) for evaluation
+2025-09-02 19:16:21,456 (optimize_esn_model:92) [INFO]: [Trial 0] start: scaler=std, N_x=2300, density=0.303, rho=0.396, leaking=0.164, input_scale=0.068
+2025-09-02 19:16:21,456 (model_utility:537) [DEBUG]: Loaded scaler: StandardScaler()
+2025-09-02 19:16:23,876 (optimize_esn_model:125) [INFO]: [Trial 0] fitting ESN...
+2025-09-02 19:17:10,333 (optimize_esn_model:127) [INFO]: [Trial 0] fitting done
+2025-09-02 19:17:11,070 (optimize_esn_model:134) [INFO]: [Trial 0] done: value=51579419.815276
+2025-09-02 19:17:11,076 (optimize_esn_model:145) [INFO]: [Trial 0] finished: value=51579419.815276, best=51579419.815276
+2025-09-02 19:17:11,077 (optimize_esn_model:335) [DEBUG]: Optimization has done
+2025-09-02 19:17:11,080 (optimize_esn_model:347) [INFO]: Optimization result saved: data/optimization/esn_quick_motion/optimization.toml
+2025-09-02 19:17:11,089 (optimize_esn_model:351) [DEBUG]: Best model config file loaded: data/optimization/esn_quick_motion/optimization.toml
+2025-09-02 19:17:11,090 (model_utility:527) [DEBUG]: Loaded data adapter: PreviewRef(PreviewRefParams(active_joints=[0], dt=0.03333333333, ctrl_step=1, preview_step=5, include_dqdes=False))
+2025-09-02 19:17:11,090 (model_utility:537) [DEBUG]: Loaded scaler: StandardScaler()
+2025-09-02 19:17:14,207 (model_utility:601) [DEBUG]: Loaded ESN: <affetto_nn_ctrl.esn.ESN object at 0x7a315f6374a0>
+2025-09-02 19:17:14,208 (optimize_esn_model:357) [INFO]: Training best model...
+2025-09-02 19:17:14,208 (model_utility:713) [DEBUG]: Loading datasets from ['tests/data/motion_data_000.csv', 'tests/data/motion_data_010.csv', 'tests/data/motion_data_003.csv', 'tests/data/motion_data_005.csv', 'tests/data/motion_data_002.csv', 'tests/data/motion_data_004.csv', 'tests/data/motion_data_009.csv', 'tests/data/motion_data_001.csv']
+2025-09-02 19:17:14,295 (model_utility:717) [INFO]: 8 datasets loaded in total
+2025-09-02 19:17:14,297 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_000.csv
+2025-09-02 19:17:14,298 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_010.csv
+2025-09-02 19:17:14,300 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_003.csv
+2025-09-02 19:17:14,301 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_005.csv
+2025-09-02 19:17:14,302 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_002.csv
+2025-09-02 19:17:14,304 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_004.csv
+2025-09-02 19:17:14,305 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_009.csv
+2025-09-02 19:17:14,306 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_001.csv
+2025-09-02 19:17:14,307 (model_utility:816) [DEBUG]: x_train.shape = (2360, 5)
+2025-09-02 19:17:14,307 (model_utility:817) [DEBUG]: y_train.shape = (2360, 2)
+2025-09-02 19:17:46,876 (optimize_esn_model:360) [DEBUG]: Training has done
+2025-09-02 19:17:47,136 (optimize_esn_model:376) [INFO]: Trained best model saved: data/optimization/esn_quick_motion/trained_model.joblib
+2025-09-02 19:23:46,300 (event_logging:164) [DEBUG]: Start event logging
+2025-09-02 19:23:46,301 (event_logging:165) [DEBUG]: Logger name: __main__
+2025-09-02 19:23:46,301 (event_logging:166) [DEBUG]: Log filename: data/optimization/esn_quick_motion/optimize_esn_model.log
+2025-09-02 19:23:46,301 (event_logging:168) [DEBUG]: Command: python apps/optimize_esn_model.py tests/data -n 1 -m apps/config/model.toml -a preview-ref -s none std --opt-seed 42 --seed 42 --train-size 0.8 --test-size 0.2 -j 0 --label esn_quick_motion --output data/optimization/esn_quick_motion --glob-pattern motion_data_*.csv --no-split-by-date --no-make-latest-symlink --overwrite -vv
+2025-09-02 19:23:46,301 (optimize_esn_model:553) [INFO]: Output directory: data/optimization/esn_quick_motion
+2025-09-02 19:23:46,302 (data_handling:162) [DEBUG]: Directory created: data/optimization/esn_quick_motion
+2025-09-02 19:23:46,303 (data_handling:162) [DEBUG]: Directory created: data/optimization/esn_quick_motion/config
+2025-09-02 19:23:46,311 (data_handling:180) [DEBUG]: Model config copied: None -> data/optimization/esn_quick_motion/config
+2025-09-02 19:23:46,311 (optimize_esn_model:556) [DEBUG]: Parsed arguments: Namespace(base_dir='/mnt/c/Users/HosodaLab2/University/Reserch/reservoir/myrobot/ESN/data', joints=['0'], datasets=['tests/data'], trials=1, glob_pattern='motion_data_*.csv', train_size=0.8, test_size=0.2, seed=42, opt_seed=42, shuffle=True, split_in_each_directory=False, model_config='apps/config/model.toml', adapter='preview-ref', scaler=['none', 'std'], output='data/optimization/esn_quick_motion', output_prefix='optimization', overwrite=True, label='esn_quick_motion', sublabel=None, split_by_date=False, specify_date=None, make_latest_symlink=False, verbose=2)
+2025-09-02 19:23:46,312 (optimize_esn_model:292) [DEBUG]: Resolved active joints: [0]
+2025-09-02 19:23:46,315 (optimize_esn_model:296) [DEBUG]: Model config file loaded: apps/config/model.toml
+2025-09-02 19:23:46,315 (optimize_esn_model:299) [DEBUG]: Loading datasets with following condition:
+2025-09-02 19:23:46,315 (optimize_esn_model:300) [DEBUG]:      Path list: ['tests/data']
+2025-09-02 19:23:46,315 (optimize_esn_model:301) [DEBUG]:   glob pattern: motion_data_*.csv
+2025-09-02 19:23:46,319 (optimize_esn_model:320) [INFO]: Dataset files: train=8, test=2
+2025-09-02 19:23:46,319 (model_utility:527) [DEBUG]: Loaded data adapter: PreviewRef(PreviewRefParams(active_joints=[0], dt=0.03333333333, ctrl_step=1, preview_step=5, include_dqdes=False))
+2025-09-02 19:23:46,319 (optimize_esn_model:324) [INFO]: Optimizing parameters...
+2025-09-02 19:23:46,320 (model_utility:713) [DEBUG]: Loading datasets from ['tests/data/motion_data_000.csv', 'tests/data/motion_data_010.csv', 'tests/data/motion_data_003.csv', 'tests/data/motion_data_005.csv', 'tests/data/motion_data_002.csv', 'tests/data/motion_data_004.csv', 'tests/data/motion_data_009.csv', 'tests/data/motion_data_001.csv']
+2025-09-02 19:23:46,436 (model_utility:717) [INFO]: 8 datasets loaded in total
+2025-09-02 19:23:46,441 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_000.csv
+2025-09-02 19:23:46,443 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_010.csv
+2025-09-02 19:23:46,444 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_003.csv
+2025-09-02 19:23:46,446 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_005.csv
+2025-09-02 19:23:46,447 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_002.csv
+2025-09-02 19:23:46,449 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_004.csv
+2025-09-02 19:23:46,451 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_009.csv
+2025-09-02 19:23:46,453 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_001.csv
+2025-09-02 19:23:46,453 (optimize_esn_model:71) [INFO]: Train data prepared: x_train=(2360, 5), y_train=(2360, 2)
+2025-09-02 19:23:46,453 (model_utility:713) [DEBUG]: Loading datasets from ['tests/data/motion_data_006.csv', 'tests/data/motion_data_007.csv']
+2025-09-02 19:23:46,481 (model_utility:717) [INFO]: 2 datasets loaded in total
+2025-09-02 19:23:46,483 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_006.csv
+2025-09-02 19:23:46,484 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_007.csv
+2025-09-02 19:23:46,485 (optimize_esn_model:77) [INFO]: Prepared 2 test dataset(s) for evaluation
+2025-09-02 19:23:46,487 (optimize_esn_model:92) [INFO]: [Trial 0] start: scaler=std, N_x=2300, density=0.303, rho=0.396, leaking=0.164, input_scale=0.068
+2025-09-02 19:23:46,487 (model_utility:537) [DEBUG]: Loaded scaler: StandardScaler()
+2025-09-02 19:23:48,904 (optimize_esn_model:125) [INFO]: [Trial 0] fitting ESN...
+2025-09-02 19:24:35,256 (optimize_esn_model:127) [INFO]: [Trial 0] fitting done
+2025-09-02 19:24:35,986 (optimize_esn_model:134) [INFO]: [Trial 0] done: value=51579419.815276
+2025-09-02 19:24:35,992 (optimize_esn_model:145) [INFO]: [Trial 0] finished: value=51579419.815276, best=51579419.815276
+2025-09-02 19:24:35,993 (optimize_esn_model:335) [DEBUG]: Optimization has done
+2025-09-02 19:24:35,995 (optimize_esn_model:347) [INFO]: Optimization result saved: data/optimization/esn_quick_motion/optimization.toml
+2025-09-02 19:24:35,997 (optimize_esn_model:351) [DEBUG]: Best model config file loaded: data/optimization/esn_quick_motion/optimization.toml
+2025-09-02 19:24:35,997 (model_utility:527) [DEBUG]: Loaded data adapter: PreviewRef(PreviewRefParams(active_joints=[0], dt=0.03333333333, ctrl_step=1, preview_step=5, include_dqdes=False))
+2025-09-02 19:24:35,998 (model_utility:537) [DEBUG]: Loaded scaler: StandardScaler()
+2025-09-02 19:24:39,187 (model_utility:601) [DEBUG]: Loaded ESN: <affetto_nn_ctrl.esn.ESN object at 0x7b63f26ff350>
+2025-09-02 19:24:39,188 (optimize_esn_model:357) [INFO]: Training best model...
+2025-09-02 19:24:39,188 (model_utility:713) [DEBUG]: Loading datasets from ['tests/data/motion_data_000.csv', 'tests/data/motion_data_010.csv', 'tests/data/motion_data_003.csv', 'tests/data/motion_data_005.csv', 'tests/data/motion_data_002.csv', 'tests/data/motion_data_004.csv', 'tests/data/motion_data_009.csv', 'tests/data/motion_data_001.csv']
+2025-09-02 19:24:39,277 (model_utility:717) [INFO]: 8 datasets loaded in total
+2025-09-02 19:24:39,278 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_000.csv
+2025-09-02 19:24:39,280 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_010.csv
+2025-09-02 19:24:39,281 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_003.csv
+2025-09-02 19:24:39,283 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_005.csv
+2025-09-02 19:24:39,284 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_002.csv
+2025-09-02 19:24:39,286 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_004.csv
+2025-09-02 19:24:39,287 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_009.csv
+2025-09-02 19:24:39,288 (model_utility:739) [DEBUG]: Loaded dataset: tests/data/motion_data_001.csv
+2025-09-02 19:24:39,289 (model_utility:816) [DEBUG]: x_train.shape = (2360, 5)
+2025-09-02 19:24:39,289 (model_utility:817) [DEBUG]: y_train.shape = (2360, 2)
+2025-09-02 19:25:27,973 (optimize_esn_model:360) [DEBUG]: Training has done
+2025-09-02 19:25:28,255 (optimize_esn_model:376) [INFO]: Trained best model saved: data/optimization/esn_quick_motion/trained_model.joblib
