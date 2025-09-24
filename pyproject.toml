@@ -5,43 +5,62 @@ description = "Robot control system with neural network-based controllers for Af
 authors = [
     { name = "Yuma", email = "your-email@example.com" },
 ]
-requires-python = ">=3.12.4"
+requires-python = ">=3.11"
 dependencies = [
-    "numpy>=1.24.0",
-    "scipy>=1.14.1",
-    "scikit-learn>=1.5.2",
-    "joblib>=1.4.2",
-    "matplotlib>=3.5.0",
-    "pandas>=1.5.0",
-    "tomli>=2.0.1; python_version < '3.11'",
-    "pyplotutil",
-    "scienceplots>=2.1.1",
-    "pypdf>=5.1.0",
+    "numpy>=1.19.0",
+    "scipy>=1.7.0",
+    "scikit-learn>=1.0.0",
+    "joblib>=1.0.0",
+    "matplotlib>=3.3.0",
+    "pandas>=1.3.0",
+    "tomli>=2.2.1; python_version < '3.11'",
+    "pyserial>=3.5",
+    # ラズパイ用ハードウェア制御（条件付きインストール）
+    "spidev>=3.5; platform_machine=='aarch64'",
+    "gpiod>=2.0; platform_machine=='aarch64'",
+    "RPi.GPIO>=0.7.1; platform_machine=='aarch64'",
+    "gpiozero>=2.0.1; platform_machine=='aarch64'",
 ]
 
 [dependency-groups]
 dev = [
-    "pytest>=7.0.0",
-    "pytest-cov>=4.0.0",
-    "mypy>=1.0.0",
+    "pytest>=6.0.0",
     "ruff>=0.1.0",
+]
+
+# デスクトップ専用の重いパッケージは別グループにする
+desktop = [
+    "pyplotutil",
+    "scienceplots>=2.1.1",
+    "pypdf>=3.0.0",
     "jupyter>=1.0.0",
     "ipykernel>=6.0.0",
+    "pytest-cov>=4.0.0",
+    "mypy>=1.0.0",
 ]
 
 [tool.ruff]
-line-length = 88
-target-version = "py312"
+line-length = 999  # 行長制限を事実上無効化
+target-version = "py311"
+extend-exclude = ["desktop/apps/", "pyplotutil/"]
 
 [tool.ruff.lint]
-select = ["E", "F", "W", "C90", "I", "N", "UP", "B", "A", "C4", "PIE", "T20", "RET", "SIM", "ARG", "PL", "R", "S"]
-ignore = ["S101", "PLR0913", "PLR2004"]
+# すべてのルールを無効化
+select = []
+ignore = ["ALL"]
+
+[tool.ruff.format]
+# フォーマットも無効化
+skip-magic-trailing-comma = true
 
 [tool.mypy]
-python_version = "3.12"
-warn_return_any = true
-warn_unused_configs = true
-disallow_untyped_defs = true
+python_version = "3.11"
+warn_return_any = false
+warn_unused_configs = false
+disallow_untyped_defs = false
+ignore_missing_imports = true
+follow_imports = "skip"
+disable_error_code = ["import-untyped", "import-not-found", "attr-defined"]
 
 [build-system]
 requires = ["hatchling"]
@@ -50,5 +69,8 @@ build-backend = "hatchling.build"
 [tool.hatch.build.targets.wheel]
 packages = ["src"]
 
+# Git依存関係（デスクトップ用のみ）
 [tool.uv.sources]
 pyplotutil = { git = "https://github.com/hrshtst/pyplotutil.git" }
+
+

@@ -1170,7 +1170,7 @@ def main() -> None:
         ref_dir = output_dir / f"reference_{i:03d}"
         ref_dir.mkdir(parents=True, exist_ok=True)
         # Centralized destinations for tracked outputs (CSV and graphs)
-        base_dest = Path('/home/hosodalab2/Desktop/MyRobot/data/tracked_trajectory')
+        base_dest = _PROJECT_ROOT / 'data' / 'tracked_trajectory'
         csv_dest = base_dest / 'csv'
         graph_dest = base_dest / 'graph'
         csv_dest.mkdir(parents=True, exist_ok=True)

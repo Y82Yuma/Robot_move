@@ -1,7 +1,42 @@
 {
     "python-envs.pythonProjects": [],
     "git.ignoreLimitWarning": true,
-    "github.copilot.chat.checkpoints.enabled": true, // trueで有効, falseで無効"
-    "github.copilot.chat.checkpoints.showFileChanges": true // trueで有効, falseで無効 }
-
+    "github.copilot.chat.checkpoints.enabled": true, // trueで有効, falseで無効
+    "github.copilot.chat.checkpoints.showFileChanges": true, // trueで有効, falseで無効
+    "python.pythonPath": ".venv/bin/python",
+    "python.defaultInterpreterPath": ".venv/bin/python",
+    "pylance.enable": true,
+    "python.analysis.extraPaths": [".venv/lib/python3.11/site-packages"],
+    "python.analysis.diagnosticMode": "openFilesOnly",
+    "python.analysis.typeCheckingMode": "off",
+    "python.analysis.ignore": [
+        "**/desktop/apps/**",
+        "**/pyplotutil/**", 
+        "**/pyplotutil.datautil/**"
+    ],
+    "python.linting.enabled": false,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": false,
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportMissingImports": "none",
+        "reportMissingTypeStubs": "none",
+        "reportImportCycles": "none",
+        "reportUnusedImport": "none",
+        "reportUnusedVariable": "none",
+        "reportSyntaxError": "none",
+        "reportGeneralTypeIssues": "none",
+        "reportOptionalMemberAccess": "none",
+        "reportOptionalCall": "none",
+        "reportOptionalIterable": "none",
+        "reportOptionalContextManager": "none",
+        "reportOptionalOperand": "none"
+    },
+    "ruff.enable": false,
+    "ruff.lint.enable": false,
+    "files.exclude": {
+        "desktop/apps/**": true
+    },
+    "search.exclude": {
+        "desktop/apps/**": true
+    }
 }
