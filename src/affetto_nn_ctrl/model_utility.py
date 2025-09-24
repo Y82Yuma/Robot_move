@@ -160,6 +160,7 @@ class PreviewRefParams(DataAdapterParamsBase):
     include_dqdes: bool = False
     # Support legacy config that sets include_tension
     include_tension: bool = False
+    use_indexed_columns: bool = False
 
 
 class PreviewRef(DataAdapterBase[PreviewRefParams, DefaultStates, DefaultRefs, DefaultInputs]):

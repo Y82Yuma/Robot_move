@@ -11,6 +11,9 @@ uv run python apps/train_model.py -vv \
   -j 5 --train-size 0.25 --seed 42 \
   -m ../data/myrobot_model/config/model.toml -a "preview-ref.step10" -s std -r mlp \
   --include-tension --label "MixAll.seed42.step10" --overwrite
+
+成功した実際のコマンド (Windows PowerShell):
+$env:Path = "C:\Users\yuma_\.local\bin;$env:Path" ; $env:PYTHONPATH = ".\src;$env:PYTHONPATH" ; uv run python desktop/apps/train_model.py -vv desktop/data/myrobot/hirai/csv/20250914/step/fast desktop/data/myrobot/hirai/csv/20250914/step/middle desktop/data/myrobot/hirai/csv/20250914/step/slow desktop/data/myrobot/hirai/csv/20250914/trapezoid/fast desktop/data/myrobot/hirai/csv/20250914/trapezoid/middle desktop/data/myrobot/hirai/csv/20250914/trapezoid/slow -j 5 --train-size 0.25 --seed 42 -m desktop/apps/config/model.toml -a "preview-ref.testing" -s std -r mlp --include-tension --label "MixAll.seed42.step10" --overwrite --no-make-latest-symlink
 """
 from __future__ import annotations
 
