@@ -4,8 +4,14 @@ from __future__ import annotations
 # Rewritten to use MyRobot hardware stack (apps/myrobot_lib) instead of affetto controller.
 # Core algorithm is preserved: load reference trajectory -> generate qdes/dqdes over time ->
 # real-time loop to track with PID -> log data -> repeat per reference file.
-# uv run python -u apps/track_trajectory.py data/trained_model/MixAll.seed42.step10/20250924T112112/trained_model.joblib -r data/recorded_trajectory/csv/reference_trajectory_5.csv -T 20 -n 1 -v
+"""
+uv run python -u apps/track_trajectory.py data/trained_model/MixAll.seed42.step10/20250924T112112/trained_model.joblib -r data/recorded_trajectory/csv/reference_trajectory_5.csv -T 10 -n 1 -v
 
+uv run python -u apps/track_trajectory.py desktop/data/mlp/trained_model.joblib -r data/recorded_trajectory/csv/reference_trajectory_5.csv -T 10 -n 1 -v
+
+uv run python -u apps/track_trajectory.py data/trained_model/MixAll.seed42.step10/20250925T162837/trained_model.joblib -r data/recorded_trajectory/csv/reference_trajectory_5.csv -T 10 -n 1 -v
+
+"""
 
 import argparse
 import csv
