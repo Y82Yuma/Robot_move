@@ -146,7 +146,7 @@ def _init_csv(base_dir: str, filename_hint: str | None, ldc_addrs: list[int], ha
     f = open(csv_path, 'w', buffering=8192, newline='')
     csv_writer = csv.writer(f)
     # Write header in exact order requested by user
-    header = ['ms','ca','cb','caper','cbper','q','qdes','dq','dqdes','pa','pb','Ta','Tb','pid_u']
+    header = ['ms','ca','cb','caper','cbper','q','qdes','dq','dqdes','pa','pb','Ta','Tb','pid_u','pid_p','pid_i','pid_d']
     csv_writer.writerow(header)
     return f, csv_path, header, csv_writer
 
@@ -586,7 +586,17 @@ def run_once(
 
             # Build row using raw numeric values where possible to avoid expensive per-loop formatting
             _t0 = time.perf_counter()
-            row = [elapsed_ms, ca_volt, cb_volt, a_pct, b_pct, ('' if enc_deg is None else enc_deg), q_des, dq_meas, dq_des, pa_val, pb_val, Ta_val, Tb_val, pid_u]
+            # include PID component breakdown for diagnostics if controller exposes them
+            pid_p = pid_i = pid_d = ''
+            try:
+                if controller is not None and hasattr(controller, 'pid'):
+                    pid_obj = getattr(controller, 'pid')
+                    pid_p = getattr(pid_obj, 'last_p', '')
+                    pid_i = getattr(pid_obj, 'last_i', '')
+                    pid_d = getattr(pid_obj, 'last_d', '')
+            except Exception:
+                pid_p = pid_i = pid_d = ''
+            row = [elapsed_ms, ca_volt, cb_volt, a_pct, b_pct, ('' if enc_deg is None else enc_deg), q_des, dq_meas, dq_des, pa_val, pb_val, Ta_val, Tb_val, pid_u, pid_p, pid_i, pid_d]
             try:
                 # enqueue row for background writer when available to avoid blocking
                 if row_queue is not None:
@@ -738,6 +748,58 @@ def parse_args():
 
 def main():
     args = parse_args()
+    # Diagnostic: print environment/import/device status to help debug import/path issues
+    def _print_diagnostics():
+        try:
+            print('[DIAG] Python executable:', sys.executable, flush=True)
+            try:
+                import platform
+                print('[DIAG] Python platform:', platform.platform(), flush=True)
+            except Exception:
+                pass
+            print('[DIAG] sys.path:')
+            for p in sys.path:
+                try:
+                    print('  -', p, flush=True)
+                except Exception:
+                    pass
+            # Show site-packages under venv if any
+            try:
+                import site
+                sps = site.getsitepackages() if hasattr(site, 'getsitepackages') else []
+                print('[DIAG] site-packages:', sps, flush=True)
+            except Exception:
+                pass
+            # Check important modules and versions
+            mods = ['joblib', 'numpy', 'scipy', 'sklearn', 'pyplotutil', 'affetto_nn_ctrl']
+            for m in mods:
+                try:
+                    mod = __import__(m)
+                    ver = getattr(mod, '__version__', None)
+                    print(f'[DIAG] import {m} OK (version={ver})', flush=True)
+                except Exception as e:
+                    print(f'[DIAG] import {m} FAILED: {e}', flush=True)
+            # Check presence of common device nodes that hardware drivers use
+            devs = ['/dev/spidev0.0', '/dev/spidev0.1']
+            try:
+                import glob
+                chips = glob.glob('/dev/gpiochip*')
+                if chips:
+                    print('[DIAG] gpiochip nodes:', chips, flush=True)
+            except Exception:
+                pass
+            for d in devs:
+                try:
+                    print(f'[DIAG] {d} exists: {os.path.exists(d)}', flush=True)
+                except Exception:
+                    pass
+        except Exception:
+            pass
+
+    try:
+        _print_diagnostics()
+    except Exception:
+        pass
     # If user asked for a 'step' trajectory, prefer step profile unless explicitly overridden
     try:
         if getattr(args, 'traj', None) == 'step':

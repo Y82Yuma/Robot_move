@@ -86,6 +86,7 @@ def _ensure_affctrllib_stub() -> None:
 
 def _load_trained_model(path: str):
     _ensure_affctrllib_stub()
+    # Note: do not stub out pyplotutil here; prefer the real installed package.
     # If the environment's site-packages (e.g. .venv-fix) isn't on sys.path, try to add it
     try:
         # Inject local project paths so affetto_nn_ctrl is importable
@@ -1103,13 +1104,52 @@ def main() -> None:
     expected_n_features = None
     try:
         trained_model = _load_trained_model(args.model)
+        # Validate the loaded trained model to ensure it matches expected interface
+        def _validate_trained_model(m) -> bool:
+            """Perform lightweight validation of a loaded trained model.
+
+            Checks for common attributes used by the tracking loop. Returns True
+            if the model looks usable, False otherwise.
+            """
+            if m is None:
+                return False
+            # The code expects at least a predict method
+            if not hasattr(m, "predict"):
+                return False
+            # If adapter exists, check for params and optional make_ctrl_input
+            adapter = getattr(m, "adapter", None)
+            if adapter is not None:
+                # params should be accessible as adapter.params
+                if not hasattr(adapter, "params"):
+                    return False
+                # adapter may optionally provide make_ctrl_input
+            # Prefer models that at least return a numeric output from predict
+            try:
+                import numpy as _np
+                dummy_X = _np.zeros((1, getattr(m, "n_features_in_", 1)))
+                y = m.predict(dummy_X)
+                # must be convertible to numpy array
+                _ = _np.asarray(y)
+            except Exception:
+                return False
+            return True
         # Reset adapter internal state if available (for delay/preview features)
         try:
             if hasattr(trained_model.adapter, 'reset'):
                 trained_model.adapter.reset()
         except Exception:
             pass
-        setattr(ctrl, "trained_model", trained_model)
+        # Validate model; on failure, fall back to PID by not attaching model
+        valid = True
+        try:
+            valid = _validate_trained_model(trained_model)
+        except Exception:
+            valid = False
+        if not valid:
+            print(f"[WARN] Trained model validation failed: falling back to PID.", flush=True)
+            trained_model = None
+        else:
+            setattr(ctrl, "trained_model", trained_model)
         try:
             aj = getattr(trained_model.adapter.params, "active_joints", None)
             dof = getattr(trained_model.adapter.params, "dof", None)
